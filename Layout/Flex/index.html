@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .flexbox {
+      display: flex;
+      width: 800px;
+    }
+
+    .flexbox__item {
+      flex: 0 1 220px;
+    }
+
+    .flexbox__item:nth-child(2) {
+      flex-shrink: 2;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flexbox">
+    <div class="flexbox__item">A</div>
+    <div class="flexbox__item">B B</div>
+    <div class="flexbox__item">C C C</div>
+    <div class="flexbox__item">D D D D</div>
+    <div class="flexbox__item">E E E E E</div>
+  </div>
+</body>
+
+</html>

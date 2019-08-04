@@ -1,0 +1,29 @@
+.flexbox {
+  border: 5px solid #4a3e53;
+}
+
+.flexbox__item {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 48px;
+}
+
+.flexbox__item:nth-child(1) {
+  background-color: #96ceb4;
+}
+
+.flexbox__item:nth-child(2) {
+  background-color: #2e94b9;
+}
+
+.flexbox__item:nth-child(3) {
+  background-color: #d9534f;
+}
+
+.flexbox__item:nth-child(4) {
+  background-color: #ffad60;
+}
+
+.flexbox__item:nth-child(5) {
+  background-color: #5c4f74;
+}

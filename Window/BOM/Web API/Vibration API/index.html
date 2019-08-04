@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vibration API</title>
+  <meta name="viewport" content="width=device-width">
+
+</head>
+
+<body>
+  <h1>Vibration API</h1>
+  <script>
+    //check for the different versions of the vibrate api
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+
+
+    if (navigator.vibrate) {
+      // vibration API supported
+      document.body.addEventListener('click', function (ev) {
+        console.log('body clicked. Time to shake.');
+        //navigator.vibrate(1000);
+        navigator.vibrate([500, 300, 100]);
+        //navigator.vibrate(0);
+      });
+    }
+
+    /***
+    James Bond Theme
+    navigator.vibrate([200,100,200,275,425,100,200,100,200,275,425,100,75,25, 75,125,75,25,75,125,100,100]);
+    Super Mario Theme
+    navigator.vibrate([125,75,125,275,200,275,125,75,125,275,200,600,200,600]);
+    Darth Vader Theme
+    navigator.vibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40, 500]);
+    ***/
+  </script>
+</body>
+
+</html>

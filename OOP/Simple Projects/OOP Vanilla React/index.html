@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="app"></div>
+  <script>
+
+    class React {
+
+      constructor(app) {
+        this.app = app;
+      }
+
+      createElement(params) {
+        if (params.flag) { // flag оприділяє, чи тег парний, чи непарний
+          return `<${params.el} style="${params.styles}">${params.content}</${params.el}>`;
+        }
+        else {
+          return `<${params.el}>`;
+        }
+      }
+
+      render(app, root) {
+        root.innerHTML = app;
+      }
+
+    }
+
+    const obj = new React({
+      app: document.querySelector('.app')
+    });
+
+    const app = obj.createElement({
+      flag: true, el: 'div', styles: "background-color: red", content: [
+        obj.createElement({ flag: true, el: 'span', styles: undefined, content: 'Hello World' }),
+        obj.createElement({ flag: true, el: 'div', styles: undefined, content: '2st elem' }),
+        "I am just a text node",
+        obj.createElement({ flag: true, el: 'div', styles: undefined, content: 'Text content' })
+      ].join(' ')
+    });
+
+    const root = document.querySelector('.app');
+
+    obj.render(app, root);
+
+  </script>
+</body>
+
+</html>

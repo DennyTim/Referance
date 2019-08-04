@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      height: 200px;
+      width: 632px;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .button-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+    }
+
+    .carousel {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+      display: flex;
+      position: absolute;
+      left: 0;
+      transition: all 1s ease;
+    }
+
+    .card {
+      background: black;
+      min-width: 200px;
+      height: 200px;
+      margin-right: 1rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <ul class="carousel" data-target="carousel">
+      <li class="card" data-target="card"></li>
+      <li class="card" data-target="card"></li>
+      <li class="card" data-target="card"></li>
+      <li class="card" data-target="card"></li>
+      <li class="card" data-target="card"></li>
+      <li class="card" data-target="card"></li>
+      <li class="card" data-target="card"></li>
+      <li class="card" data-target="card"></li>
+      <li class="card" data-target="card"></li>
+    </ul>
+    <div class="button-wrapper">
+      <button data-action="slideLeft">L</button>
+      <button data-action="slideRight">R</button>
+    </div>
+  </div>
+  <script>
+    const carousel = document.querySelector("[data-target='carousel']");
+    const card = carousel.querySelector("[data-target='card']");
+    const leftButton = document.querySelector("[data-action='slideLeft']");
+    const rightButton = document.querySelector("[data-action='slideRight']");
+    const carouselWidth = carousel.offsetWidth;
+    const cardStyle = card.currentStyle || window.getComputedStyle(card)
+    const cardMarginRight = Number(cardStyle.marginRight.match(/\d+/g)[0]);
+    const cardCount = carousel.querySelectorAll("[data-target='card']").length;
+
+    let offset = 0;
+    const maxX = -((cardCount / 3) * carouselWidth +
+      (cardMarginRight * (cardCount / 3)) - carouselWidth - cardMarginRight);
+
+    leftButton.addEventListener("click", function () {
+      if (offset !== 0) {
+        offset += carouselWidth + cardMarginRight;
+        carousel.style.transform = `translateX(${offset}px)`;
+      }
+    })
+
+    rightButton.addEventListener("click", function () {
+      if (offset !== maxX) {
+        offset -= carouselWidth + cardMarginRight;
+        carousel.style.transform = `translateX(${offset}px)`;
+      }
+    })
+  </script>
+</body>
+
+</html>

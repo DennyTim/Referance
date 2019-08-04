@@ -1,0 +1,4 @@
+.some:after{
+    content: "(+)";
+    margin-left: 10px;
+}

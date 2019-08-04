@@ -1,0 +1,40 @@
+[
+  {
+    "name": "New Releases",
+    "movies": [
+      {
+        "id": 68576854,
+        "title": "Die Hard",
+        "boxart": "https://via.placeholder.com/150/000000/FFFFFF/?text=Title",
+        "uri": "https://via.placeholder.com/150/FFFF00/000000?Text=WebsiteBuilders.com",
+        "rating": 4.0
+      },
+      {
+        "id": 68576855,
+        "title": "The Chamber",
+        "boxart": "https://via.placeholder.com/150/000000/FFFFFF/?text=Title",
+        "uri": "https://via.placeholder.com/150/FFFF00/000000?Text=WebsiteBuilders.com",
+        "rating": 5.0
+      }
+    ]
+  },
+  {
+    "name": "Drammas",
+    "movies": [
+      {
+        "id": 68576856,
+        "title": "Fracture",
+        "boxart": "https://via.placeholder.com/150/000000/FFFFFF/?text=Title",
+        "uri": "https://via.placeholder.com/150/FFFF00/000000?Text=WebsiteBuilders.com",
+        "rating": 4.0
+      },
+      {
+        "id": 68576857,
+        "title": "Bad boys",
+        "boxart": "https://via.placeholder.com/150/000000/FFFFFF/?text=Title",
+        "uri": "https://via.placeholder.com/150/FFFF00/000000?Text=WebsiteBuilders.com",
+        "rating": 5.0
+      }
+    ]
+  }
+]
