@@ -37,10 +37,9 @@ class UIDecorator {
 
   show(value = "", color) {
     this.strategy = this.createStrategy(this.input, value);
-
-    if (this.strategy !== null) {
+    (this.strategy instanceof ColorText ||
+      this.strategy instanceof ColorBorder) &&
       this.strategy.execute(color);
-    }
   }
 }
 
