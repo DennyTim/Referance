@@ -1,23 +1,9 @@
-function createStrategy(input, type) {
-  switch (type) {
-    case "border":
-      console.log("created");
-      return new ColorBorder(input);
-    case "color":
-      console.log("created");
-      return new ColorText(input);
-    default:
-      return null;
-  }
-}
-
 class ColorBorder {
   constructor(input) {
     this.input = input;
   }
 
   execute(value) {
-    console.log("hi1");
     this.input.style = `border: 1px solid ${value}`;
   }
 }
@@ -28,7 +14,6 @@ class ColorText {
   }
 
   execute(value) {
-    console.log("hi2");
     this.input.style = `color: ${value}`;
   }
 }
@@ -39,8 +24,19 @@ class UIDecorator {
     this.strategy = null;
   }
 
+  createStrategy(input, type) {
+    switch (type) {
+      case "border":
+        return new ColorBorder(input);
+      case "color":
+        return new ColorText(input);
+      default:
+        return null;
+    }
+  }
+
   show(value = "", color) {
-    this.strategy = createStrategy(this.input, value);
+    this.strategy = this.createStrategy(this.input, value);
 
     if (this.strategy !== null) {
       this.strategy.execute(color);
