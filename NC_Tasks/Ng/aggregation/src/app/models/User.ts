@@ -1,3 +1,4 @@
+import { Task } from './Task';
 export interface User {
   id: number;
   username: string;
@@ -7,4 +8,5 @@ export interface User {
   website: string;
   company: object;
   name: string;
+  completedTaks?: Task;
 }
