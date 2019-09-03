@@ -13,7 +13,7 @@ import { Lesson } from '../shared/model/lesson';
   styleUrls: ['./event-bus-experiments.component.css']
 })
 export class EventBusExperimentsComponent implements OnInit {
-  lessons: Lesson[] = [];
+  private lessons: Lesson[] = [];
 
   constructor() {}
 

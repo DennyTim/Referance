@@ -6,6 +6,7 @@ import {
   ADD_NEW_LESSON
 } from '../event-bus-experiments/event-bus';
 import { Lesson } from '../shared/model/lesson';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'lessons-list',
@@ -33,11 +34,15 @@ export class LessonsListComponent implements OnInit, Observer {
 
   notify(data: any) {
     console.log('Lessons list component received data');
-    this.lessons = data;
+    this.lessons = data.slice(0);
   }
 
   toggleLessonViewed(lesson: Lesson) {
     console.log('Toggling lesson...');
     lesson.completed = !lesson.completed;
+  }
+
+  delete(deleted: Lesson): void {
+    _.remove(this.lessons, lesson => lesson.id === deleted.id);
   }
 }
