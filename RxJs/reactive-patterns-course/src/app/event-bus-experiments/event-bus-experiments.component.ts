@@ -22,7 +22,7 @@ export class EventBusExperimentsComponent implements OnInit {
       };
 
       store.addLesson(newLesson);
-    }, 10000);
+    }, 1000);
   }
 
   addLesson(lessonText: string) {
