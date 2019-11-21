@@ -2,7 +2,7 @@ const List = require('./data-structure');
 const ll = new List();
 
 const request = {
-  priority: 'low'
+  priority: 'high'
 };
 
 ll.insertLast('Alan', 'Operator', 'low');
