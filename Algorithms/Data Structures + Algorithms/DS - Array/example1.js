@@ -31,15 +31,14 @@ class MyArray {
     for (let i = index; i < this.length - 1; i++) {
       this.data[i] = this.data[i + 1];
     }
-    console.log(this.data[this.length - 1]);
     delete this.data[this.length - 1];
     this.length--;
   }
 
   reverse() {
     const arr = {};
-    for (let i = this.length - 1, y = 0; i >= 0; i-- , y++) {
-      arr[y] = this.data[i]
+    for (let i = this.length - 1, y = 0; i >= 0; i--, y++) {
+      arr[y] = this.data[i];
     }
     return arr;
   }
@@ -55,4 +54,4 @@ myArray.push('!');
 // myArray.push('nice');
 // myArray.shift();
 console.log(myArray);
-console.log(myArray.reverse())
+console.log(myArray.reverse());
